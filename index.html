@@ -1,127 +1,220 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YouTube Song Player</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <title>YouTube Song Player</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: sans-serif;
-    }
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: sans-serif;
+        }
 
-    .player-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 4px solid hotpink;
-      background-color: #111;
-      z-index: 1000;
-    }
+        .player-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 4px solid hotpink;
+            background-color: #111;
+            z-index: 1000;
+        }
 
-    iframe {
-      width: 100%;
-      height: 200px;
-      border: none;
-    }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
 
-    .song-list {
-      margin-top: 210px; /* height of player + space */
-      max-height: calc(100vh - 210px);
-      overflow-y: auto;
-      padding: 10px 20px;
-    }
+        .song-list {
+            margin-top: 210px;
+            /* height of player + space */
+            max-height: calc(100vh - 210px);
+            overflow-y: auto;
+            padding: 10px 20px;
+        }
 
-    .song-box {
-      display: flex;
-      align-items: center;
-      background: #1a1a1a;
-      margin-bottom: 12px;
-      padding: 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        .song-box {
+            display: flex;
+            align-items: center;
+            background: #1a1a1a;
+            margin-bottom: 12px;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .song-box:hover {
-      background: #222;
-    }
+        .song-box:hover {
+            background: #222;
+        }
 
-    .serial {
-      font-weight: bold;
-      margin-right: 10px;
-      color: hotpink;
-      width: 30px;
-    }
+        .serial {
+            font-weight: bold;
+            margin-right: 10px;
+            color: hotpink;
+            width: 30px;
+        }
 
-    .thumbnail {
-      width: 100px;
-      height: 70px;
-      margin-right: 15px;
-      border-radius: 6px;
-    }
+        .thumbnail {
+            width: 100px;
+            height: 70px;
+            margin-right: 15px;
+            border-radius: 6px;
+        }
 
-    .title {
-      font-size: 15px;
-    }
-  </style>
+        .title {
+            font-size: 15px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- Fixed Top Pink Player -->
-  <div class="player-container" id="player">
-    <iframe id="ytPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-
-  <!-- Scrollable Song List -->
-  <div class="song-list" id="songList">
-    <div class="song-box" data-yt="https://www.youtube.com/embed/BiMmnv74UWc?autoplay=1">
-      <div class="serial">1</div>
-      <img class="thumbnail" src="https://img.youtube.com/vi/BiMmnv74UWc/hqdefault.jpg">
-      <div class="title">BiMmnv74UWc</div>
+    <!-- Fixed Top Pink Player -->
+    <div class="player-container" id="player">
+        <iframe id="ytPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 
-    <div class="song-box" data-yt="https://www.youtube.com/embed/ezS2W13mK30?autoplay=1">
-      <div class="serial">2</div>
-      <img class="thumbnail" src="https://img.youtube.com/vi/ezS2W13mK30/hqdefault.jpg">
-      <div class="title">ezS2W13mK30</div>
+    <!-- Scrollable Song List -->
+    <div class="song-list" id="songList">
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/LlN8MPS7KQs?autoplay=1">
+            <div class="serial">1</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/LlN8MPS7KQs/hqdefault.jpg">
+            <div class="title">oneheart x reidenshi - snowfall </div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/tERTBPdVivc?autoplay=1">
+            <div class="serial">2</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/tERTBPdVivc/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/tV4BqL6j4sE?autoplay=1">
+            <div class="serial">3</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/tV4BqL6j4sE/hqdefault.jpg">
+            <div class="title">Broken Angel - Arash & Helenak</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/sZtp-2R4hRo?autoplay=1">
+            <div class="serial">4</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/sZtp-2R4hRo/hqdefault.jpg">
+            <div class="title">Maine Rooyan</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/q-RP99S_qK0?autoplay=1">
+            <div class="serial">5</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/q-RP99S_qK0/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/-A8JLf-LVeY?autoplay=1">
+            <div class="serial">6</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/-A8JLf-LVeY/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/2ySbhwTL-4o?autoplay=1">
+            <div class="serial">7</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/2ySbhwTL-4o/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/iP964OLFW2U?autoplay=1">
+            <div class="serial">8</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/iP964OLFW2U/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/8C0LgcrXL_g?autoplay=1">
+            <div class="serial">9</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/8C0LgcrXL_g/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/BiMmnv74UWc?autoplay=1">
+            <div class="serial">10</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/BiMmnv74UWc/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/ezS2W13mK30?autoplay=1">
+            <div class="serial">11</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/ezS2W13mK30/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/7vGlFmAmI0M?autoplay=1">
+            <div class="serial">12</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/7vGlFmAmI0M/hqdefault.jpg">
+            <div class="title">Hamidshax - shadow</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/mOivOlP9GRk?autoplay=1">
+            <div class="serial">13</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/mOivOlP9GRk/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/Cv0q056lL0Y?autoplay=1">
+            <div class="serial">14</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/Cv0q056lL0Y/hqdefault.jpg">
+            <div class="title">Alan Walker - Sing Me To Sleep</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/tKSGmhXIMNs?autoplay=1">
+            <div class="serial">15</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/tKSGmhXIMNs/hqdefault.jpg">
+            <div class="title">Hamidshax - Timeless</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/uhZuPuVPFtA?autoplay=1">
+            <div class="serial">16</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/uhZuPuVPFtA/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/k6JGzdkMA-8?autoplay=1">
+            <div class="serial">17</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/k6JGzdkMA-8/hqdefault.jpg">
+            <div class="title">Hamidshax - This is Love</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/Tt9sHaGgkkQ?autoplay=1">
+            <div class="serial">18</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/Tt9sHaGgkkQ/hqdefault.jpg">
+            <div class="title">Hamidshax & Azimov - Farewell</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/iABe1YGI0zE?autoplay=1">
+            <div class="serial">19</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/iABe1YGI0zE/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
+        <div class="song-box" data-yt="https://www.youtube.com/embed/37Vqg66iW5A?autoplay=1">
+            <div class="serial">20</div>
+            <img class="thumbnail" src="https://img.youtube.com/vi/37Vqg66iW5A/hqdefault.jpg">
+            <div class="title">mOivOlP9GRk</div>
+        </div>
+
     </div>
 
-    <div class="song-box" data-yt="https://www.youtube.com/embed/7vGlFmAmI0M?autoplay=1">
-      <div class="serial">3</div>
-      <img class="thumbnail" src="https://img.youtube.com/vi/7vGlFmAmI0M/hqdefault.jpg">
-      <div class="title">7vGlFmAmI0M</div>
-    </div>
+    <script>
+        const boxes = document.querySelectorAll('.song-box');
+        const iframe = document.getElementById('ytPlayer');
 
-    <div class="song-box" data-yt="https://www.youtube.com/embed/mOivOlP9GRk?autoplay=1">
-      <div class="serial">4</div>
-      <img class="thumbnail" src="https://img.youtube.com/vi/mOivOlP9GRk/hqdefault.jpg">
-      <div class="title">mOivOlP9GRk</div>
-    </div>
-
-    <div class="song-box" data-yt="https://www.youtube.com/embed/Cv0q056lL0Y?autoplay=1">
-      <div class="serial">5</div>
-      <img class="thumbnail" src="https://img.youtube.com/vi/Cv0q056lL0Y/hqdefault.jpg">
-      <div class="title">Cv0q056lL0Y</div>
-    </div>
-  </div>
-
-  <script>
-    const boxes = document.querySelectorAll('.song-box');
-    const iframe = document.getElementById('ytPlayer');
-
-    boxes.forEach(box => {
-      box.addEventListener('click', () => {
-        const ytLink = box.getAttribute('data-yt');
-        iframe.src = ytLink;
-      });
-    });
-  </script>
-
+        boxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const ytLink = box.getAttribute('data-yt');
+                iframe.src = ytLink;
+            });
+        });
+    </script>
 </body>
 </html>
